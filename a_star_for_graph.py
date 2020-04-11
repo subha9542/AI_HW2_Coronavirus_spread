@@ -73,6 +73,7 @@ def search(G, cost, start,start_name, end,end_name):
                 continue
 
             child.g = current_node.g + G[current_node.name][child.name]['weight']
+            #child.h is not correct
             child.h = (((G.nodes[child.name]['pos'][0] - G.nodes[end_node.name]['pos'][0]) ** 2) + 
                        ((G.nodes[child.name]['pos'][1] - G.nodes[end_node.name]['pos'][1]) ** 2)) 
             child.f = child.g + child.h
